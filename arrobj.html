@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // built-in: Date(), Math
+        let roundCeil = Math.ceil(10.2);
+        let roundFloor = Math.floor(10.2);
+        let sqrtData = Math.sqrt(4) ;
+        console.log(roundCeil, roundFloor, sqrtData);
+
+        let date = new Date();
+        date.toLocaleString();
+        console.log(date);
+
+        //user defined object
+        let personObj = {
+            "name": "Your Name",
+            "address": "Kathmandu, Nepal"        
+        };
+        console.log(personObj, personObj.name, personObj.address);
+         //
+        //(JSON: JavaScript object Notation) document
+        let college = [
+            {
+                name: "PKMC",
+                address: "Bagbazar, Ktm, Nepal"
+            },
+            {
+                subjects: {
+                    BCA1st: ["CFA", "ENG", "MATH"],
+                    BCA2nd: ["c", "ENG", "MIC"]
+                }
+            }
+        ];
+    </script>
+</body>
+</html>

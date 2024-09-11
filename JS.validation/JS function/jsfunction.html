@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Function</title>
+</head>
+<body>
+    <script>
+        /**
+         *  - function keyboard
+         *  - function name (identifier)
+         * */
+        function myFunction() { //Declaration and definition of function
+            alert("This text is from funtion.");
+        }//This is just a blueprint block
+
+        //call function
+        myFunction();  //it alerts now
+
+        //Above function is ESS and older
+        //Now, ES6 and newer technique to build a function (Fat arrow function)
+        let myFunc = () => {
+            alert("Text from Fat-arrow function");
+        }
+        myFunc(); //call of function
+        /**
+         * function types:
+         * -built-in functions(alert(), confirm(), etc...)
+         * -user-defined functions
+         *             -without argument and no return type
+         *              -without argument and return type
+         *              -with argument and  no return type
+         *              -with argument and return type
+         * */
+        let student = (name) => {
+            alert("My name is : " +name);
+        }
+        student("Student Name");
+
+        //we have studied no return type both
+        //Now return type
+        let personInfo = () => {
+            return 2 + 2;
+        } 
+        alert(personInfo()); //call and print on alert
+        //or
+        let pInfo = personInfo();
+        alert(pInfo);
+
+        //with argument and return type
+        let collegeFunc = (name, address) => {
+            return name + "," + address;
+        }
+        let collegePK = collegeFunc("PKMC", "Kathmandu, Nepal");
+        document.write(collegePK);
+
+        /**
+         *  Callback function
+         * - function inside function
+         * */
+        let calcFunc = (n1, n2, op) => {
+            //return n1 op n2 ; //error,
+            //doesn't support number and string together
+
+            // to support user input operator, we use eval()
+            return eval(`${n1}${op}${n2}`);
+        }
+        let sumData = calcFunc(3, 4, "+");  //call
+        alert(sumData); //print
+
+        //Now, let use calcFunc as callback on another function
+        let simpleCalculator = (userName, calcFunc) => {
+            document.write(userName);
+            let calcData = calcFunc(3, 4, "+");  //callback_function
+            document.write(calcData);
+        };
+        simpleCalculator("Your Name", calcFunc);
+
+        //Next try
+        document.write("<hr>");
+        let myCalculation = (user, calcFunc) => {
+            document.write(user);
+            document.write(calcFunc);
+        }
+        myCalculation("user Name", calcFunc(3, 7, "/"));
+    </script>
+</body>
+</html>

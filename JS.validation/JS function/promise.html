@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x = 10;
+        let y = 5;
+        new Promise ( (res, rej) => {
+            if(x > y) res(`${x} is greater than ${y}. Correct!`);
+            else rej("Oops! error detected.");
+            //Note: reject is optional parameter
+        })
+        .then((value) => `$(value) Go on.`)
+        .then((value) => {
+            document.write(value);
+        }).catch((err) => {
+            document.write(err);
+        }).finally(() => {
+            document.write(`program executed!`);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="datetime"></div>
+    <script>
+        let college = ["PKMC", ["English", "Math", "CFA"]]; 
+        //to add multiple value of related term is possible through inherited array only
+        college.forEach(data => {
+            //checking length if array on the index of loop
+            console.log(data);
+            console.log(typeof(data));
+            //check prototype of Object
+            console.log(Object());
+            //check prototype of Array
+            console.log(Array());
+
+            /**
+             * Lets check if object
+            */
+            if(typeof(data) == 'object') {
+                Array.from(data).forEach(child => {
+                    console.log(child);
+                });
+            } else {
+                console.log(data);
+            }
+            
+        });
+
+        /*
+        in JavaScript, there is indexed Array exists.
+        as an associative Array, we use Object which provides key:value
+        */
+       //2D Array concept
+        let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+        arr.forEach(data => {
+            data.forEach(item => {
+                document.write(item + "&nbsp;&nbsp;&nbsp;&nbsp;");
+            }); 
+            document.write("<br>");
+        });
+        document.write("<hr>");
+        // let arr2 = [3][3]; //won't support this way multi-dimension like C/C++
+        let arr2 = [[3, 2], [3, 4]]; //support this way
+        for(i = 0; i < 3; i++) {
+            for(j = 0; j < 3; j++) {
+                document.write(arr2[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;");
+            }
+            document.write("<br>");
+        }
+        /**
+         * In C/C++, we use multi-dimension array for nested loop.
+         * In JS, we use nested array for nested loop.
+         * 
+         * Note: In JS, doesn't support multi-dimension array.
+        */
+
+        /**
+         * concept of Array in JS:
+         * -Single-dimension array only works
+         * - Data wont't work with memory, it works directly as value
+         * */
+
+         //Array manipulation
+         let myArr = ["Your Name", 9844993923,"Your Address"];
+         console.log(myArr);
+         //Add new item at the end of the array items
+         myArr.push("New Item");
+         console.log(myArr);
+         //Add item at the start of array items
+         myArr.unshift("First Item");
+         console.log(myArr);
+        //Add new item at the middle of array items.
+        myArr.splice(2,0,"Middle Item");  //splice (start,remove,item)
+        console.log(myArr);
+
+        //remove
+        myArr.pop();      //removes last item
+        myArr.shift();
+        myArr.splice(3, 1);
+        console.log(myArr);
+
+        /**
+         * # object as an array
+         * -Array also know as object
+         * -It provides "key:value" structure of data,
+         * which is not possible to achieve with indexed array
+         * 
+         * -key:value (like associative array in PHP scripting: key=>value )
+         * 
+         * #objects in JavaScript
+         *      -Built-in object
+         *         -Date()
+         *         -Math() etc.
+         *       -User defined objects
+         * */
+        //Built-in
+        //setInterval(callback_function,duration_in_miliseconds);
+        setInterval(function(){
+        let date = new Date();    //date object all
+       // console.log(date.getFullYear(), date.getMonth() +1, date.getDate());
+        //console.log(date.getHours(), date.getMinutes(), date.getSeconds());
+
+        let year = date.getFullYear();
+            month = date.getMonth();
+            mDay = date.getDate();
+            day = date.getDay();
+            h= date.getHours();
+            m = date.getMinutes();
+            s = date.getSeconds();
+
+
+        let monthArr = ["Janurary","February","March", "April","May", "June", "July","August","September", "October","November", "December"];
+        let dayArr = ["Sunday","Monday","Tuesday","wednesday","Thrusday","Friday","Saturday"];
+
+        let dateTime =  `${year}/${monthArr[month]}/${mDay}</strong>, <em> ${dayArr[day]}</em> - <span>${h}: ${m}:${s}</span>`;
+        
+        document.getElementById("datetime").innerText = dateTime;
+    }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Client-side Scripting</title>
+</head>
+<body>
+    <h1>Data manipulation with JS</h1>
+    <script type="text/javascript">
+        /* #1. Data holders
+            - variable
+            - array
+            - object
+           #2. Data organization or manipulation
+            - Function
+            - Blocks (above from ES6)
+            #3. Data manipulation with Events
+                There are 4 types of events: 
+                - Mouse event, 
+                - Keyboard event
+                - Form event
+                - Window event
+            #4. Error and Exception handling
+        */
+       //Variable making: (var, let, const)
+       var name; //declare
+       name = "Your Name"; //define
+       console.log(name); //printing
+       name = "My Name"; //redefine
+       var name; //redeclare
+       var name = "Hari Gopal"; //redclare and redefine together
+       console.log(name);
+
+       //now, let keyword after var
+       let age; //declare
+       age = 20; //define
+       age = 17; //redefine, works
+       console.log(age);
+       //let age; //redeclare won't work 
+
+       //now, const keyword
+       //const address; //declare only won't work
+       const address = "Kathmandu"; //delcare and define only works
+       console.log(address);
+
+       /**
+        * Note: var - ES5 and older
+        *       let and const: ES6 and newer
+        * */
+       //Array, ES5 and older
+       let persons = new Array("Your Name", 19, "Kathmandu");
+       //indexed array
+       console.log(persons[0], persons[1], persons[2]);
+        /**
+         * In JS: 
+         *  - Methods and Properties: camelCase
+         *  - JS word, Object, Array: PascalCase
+        
+       To print multiple index as loop on JavaSript:
+       - If, Array(): forEach() method
+       - If, Object(): map() method
+       - Note; we have other techques also
+
+       use: arrayVariale.forEach(callback_function());
+       */
+       persons.forEach(function(item) { //ES5
+         console.log(item);
+       });
+       persons.forEach((item) => { //ES6
+        console.log(item);
+       });
+
+       //next Array
+        //let college = new Array(); //Array method as an object
+
+        //let college = ["PKMC", "subjects": []]; //Array literal
+        //won't work like:  <"subjects": []> or <"subjects" => []>
+        let college = ["PKMC", ["English", "Math", "CFA"]]; 
+        //to add multiple value of related term is possible through inherited array only
+        
+
+    </script>
+</body>
+</html>

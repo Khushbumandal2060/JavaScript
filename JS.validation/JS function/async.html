@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let myFunc = () => {
+        return new Promise((res) => {
+            setTimeout(() => {
+                res("Data");
+            }, 2000);
+        })
+    }
+
+    // async function() {} // async with ESS function
+
+   let nextFunc = async () => {
+        /* if we used async on function declaration.
+           Use await on calling other function and high level logics
+        */
+    }
+
+    let nextFunc2 = () => {
+        console.log("Calling function");
+        const result = myFunc();
+        console.log(result);  //output: Data
+    }
+    nextFunc2();
+
+    //====================================
+    // case 1  (Print from outside with returned value)
+    function namePrint(name) {
+        return name;
+    }
+    console.log(namePrint("Your Name"));   //output: Your Name
+
+    //case 3: print after 3 seconds (print from outside with returned value)
+    function namePrint3(name) {
+        //having NULL with basic function, lets  try promise
+        return new Promise((res, rej) => {   //Promise function
+            setTimeout(function(){
+                res(name);
+            },3000);
+        })
+    
+    }
+    console.log(namePrint3("Your name"));  //output: Promise object
+
+    /*case 4: Above nested function's return data handling is  possible with async/await
+
+    Let's create new asynchronous function and call above nested function block
+    */
+   async function displayData() {
+    let result = await namePrint3("You are resolved!");
+    let result2 = await namePrint3("Next resolved!");
+    console.log(result,result2);
+   }
+   displayData(); //asynchronous function call
+   //Expected output: You are resolved!
+
+</script>
+</body>
+</html>
