@@ -7,6 +7,8 @@ price = 25.02;
 x = null;
 y = undefined;
 isFollow = true;
+const a=10;
+console.log(a);
 console.log(price);
 console.log(x);
 console.log(y);
