@@ -8,7 +8,12 @@ x = null;
 y = undefined;
 isFollow = true;
 const a=10;
-
+const student ={
+    fillName:"Nikhil Singh",
+    age:20,
+    cgpa: 8.2,
+    isPass: true,
+};
 console.log(a);
 console.log(price);
 console.log(x);
@@ -18,5 +23,7 @@ console.log(isFollow);
 {
     let a = 10;
     console.log(a);
+    
+    
 }
 
