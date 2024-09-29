@@ -14,6 +14,7 @@ const student ={
     cgpa: 8.2,
     isPass: true,
 };
+console.log(student["age"]);
 console.log(a);
 console.log(price);
 console.log(x);
