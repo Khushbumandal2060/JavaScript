@@ -8,9 +8,15 @@ x = null;
 y = undefined;
 isFollow = true;
 const a=10;
+
 console.log(a);
 console.log(price);
 console.log(x);
 console.log(y);
 console.log(isFollow);
+
+{
+    let a = 10;
+    console.log(a);
+}
 
