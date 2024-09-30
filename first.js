@@ -32,4 +32,5 @@ console.log(isFollow);
     follwers: 478,
     following: 168
  };
+ console.log(typeof["followers"]);
 
