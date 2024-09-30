@@ -25,6 +25,11 @@ console.log(isFollow);
     let a = 10;
     console.log(a);
     
-    
 }
+ const profile = {
+    username: "khushbumandal15",
+    isFollow: false,
+    follwers: 478,
+    following: 168
+ };
 
