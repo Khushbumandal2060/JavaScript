@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form action="" method="post" name="UserFrm" id="UserForm"
+     onsubmit="return validateForm()">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" 
+        placeholder="Enter username" />
+        <span id="err_username" class="error"></span>
+        <label for="username">Phone</label>
+        <input type="number" name="phone" id="phone" 
+        placeholder="Enter phone" />
+        <span id="err_phone" class="error"></span>
+        <input type="submit" name="register" value="Register">
+    </form>
+    <script src="validation_form.js"></script>
+</body>
+</html>
