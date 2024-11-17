@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #block{
+            background-color: azure;
+            color: black;
+            border:2px solid green;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Animate JS</h1>
+    <button id="in">Animate In</button>
+    <button id="out">Animate Out</button>
+    <p id="block">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error veritatis tempora itaque quae quasi sit, animi numquam at quaerat iste eum aliquid facere asperiores deserunt voluptatum esse perferendis libero architecto.</p>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#in').click(function(){
+                $('#block').animate({
+                    width:'50%',
+                    opacity:'0.5',
+                    margin:'100px'
+                },5000);
+            });
+            $('#out').click(function(){
+                $('#block').animate({
+                    width:'100%',
+                    opacity:'1',
+                    margin:'0'
+                },5000);
+            });
+        });
+    </script>
+</body>
+</html>
