@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ajax Example</h1>
+    <button id="btn" onclick="changeContent()">Get Data</button>
+    <p id="block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus sequi autem, corporis nostrum perferendis, vitae sapiente labore laudantium necessitatibus, consectetur consequatur. Fuga voluptate cumque accusantium sint labore odit fugit ipsum.</p>
+    <script>
+        function changeContent(){
+            let xhttp = new XMLHttpRequest();
+            xhttp.open('GET' ,'content.txt', 'true');
+            xhttp.send();
+            xhttp.onreadystatechange = function(){
+                if(this.status ==200 && this.readyState == 4){
+                    document.getElementById('block').innerHTML = this.responseText;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
